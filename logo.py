@@ -1,6 +1,6 @@
 # ICS3U
 # Assignment 2: Logo
-# <your name>
+# Jacky Liang
 
 # adapted from http://www.101computing.net/getting-started-with-pygame/
 
@@ -23,7 +23,7 @@ SCREENHEIGHT = 400
 # The window is defined as (width, height), measured in pixels
 size = (SCREENWIDTH, SCREENHEIGHT)
 screen = pygame.display.set_mode(size)
-pygame.display.set_caption("My Logo")
+pygame.display.set_caption("My MACKIE Logo")
 
 # This loop will continue until the user exits the game
 carryOn = True
@@ -44,12 +44,17 @@ while carryOn:
     # --- Draw code goes here
 
     # Clear the screen to white
-    screen.fill(WHITE)
+    screen.fill(BLACK)
 
     # Queue different shapes and lines to be drawn
-    # pygame.draw.rect(screen, RED, [55, 200, 100, 70], 0)
-    # pygame.draw.line(screen, GREEN, [0, 0], [100, 100], 5)
-    # pygame.draw.ellipse(screen, BLACK, [20, 20, 250, 100], 2)
+    # - Boarder
+    pygame.draw.ellipse (screen, WHITE, [10, 10, 380, 380], 10)
+    # - Head
+    pygame.draw.ellipse (screen, WHITE, [220, 80, 60, 60], 18)
+    # - Shoulders
+    pygame.draw.line (screen, WHITE, [185, 80], [245, 200], 25)
+    # - Body
+    pygame.draw.line (screen, WHITE, [120, 200], [210, 150], 25)
 
     # Update the screen with queued shapes
     pygame.display.flip()
