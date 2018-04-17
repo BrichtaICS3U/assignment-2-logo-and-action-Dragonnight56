@@ -12,7 +12,6 @@ pygame.init()
 # Colours are defined using RGB values
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 
 # Set the screen size (please don't change this)
@@ -23,7 +22,7 @@ SCREENHEIGHT = 400
 # The window is defined as (width, height), measured in pixels
 size = (SCREENWIDTH, SCREENHEIGHT)
 screen = pygame.display.set_mode(size)
-pygame.display.set_caption("My MACKIE Logo")
+pygame.display.set_caption("My Adobe Logo")
 
 # This loop will continue until the user exits the game
 carryOn = True
@@ -44,18 +43,26 @@ while carryOn:
     # --- Draw code goes here
 
     # Clear the screen to white
-    screen.fill(BLACK)
+    screen.fill(RED)
 
     # Queue different shapes and lines to be drawn
-    # - Boarder
-    pygame.draw.ellipse (screen, WHITE, [10, 10, 380, 380], 10)
-    # - Head
-    pygame.draw.ellipse (screen, WHITE, [220, 80, 60, 60], 18)
-    # - Shoulders
-    pygame.draw.line (screen, WHITE, [185, 80], [245, 200], 25)
-    # - Body
-    pygame.draw.line (screen, WHITE, [120, 200], [210, 150], 25)
+    # - Left side
+    pygame.draw.line (screen, WHITE, [200, 0], [35, 270], 75)
+    # - Right side
+    pygame.draw.line (screen, WHITE, [200, 0], [362, 270], 75)
 
+    # - Bottom end 
+    pygame.draw.line (screen, WHITE, [70, 233], [172, 233], 75)
+    pygame.draw.line (screen, WHITE, [170, 196], [210, 270], 75)
+
+    # - Blank space 
+    pygame.draw.rect (screen, WHITE, [0, 270, 400, 150])
+
+    # - Text
+    font = pygame.font.SysFont ("Adobe Text Pro Regular", 190)
+    text = font.render ("Adobe", True, BLACK)
+    screen.blit (text, (200 - text.get_width () // 2, 425 - text.get_height ())) 
+    
     # Update the screen with queued shapes
     pygame.display.flip()
 
